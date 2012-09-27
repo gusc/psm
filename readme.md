@@ -15,3 +15,28 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEAL
 
 */
 
+General Info
+============
+
+* License: MIT
+* Uses FamFamFam icon set from: http://www.famfamfam.com/lab/icons/silk/
+
+Dependencies
+============
+
+* php-5.3+ with pgsql extension
+* postgresql-8.0+ (I'm not sure weather it will work with PostgreSQL 7.4)
+
+Installation
+============
+
+1. Copy files in your web root or sub directory
+2. Edit config.inc.php file accordingly (it's mandatory to set PSM_URL constant)
+3. Enable mod_rewrite and .htaccess file support in your HTTP server
+4. Enable exec() function and grant access to pg_dump and psql commands
+
+Use in your project
+===================
+
+Basically you can use PSMViewHtml and PSMModel classes, just set up the constants (PSM_URL, PSM_PATH) and copy the logic from index.php and PSM.php files. And when calling a view function from PSMHtmlView first parameter should be false, so it does not output full HTML source.
+
