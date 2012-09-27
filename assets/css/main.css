@@ -1,0 +1,206 @@
+/*
+
+Copyright (C) 2012 Gusts Kaksis <gusts.kaksis@gmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+/* RESET */
+* {
+	padding: 0;
+	margin : 0;
+}
+body {
+  background-color: #ffffff;
+  font: normal 12px Arial, sans-serif;
+  padding: 20px;
+}
+a {
+	color: #0A7ACD;
+	text-decoration: none;
+}
+
+/* TABLES */
+table {
+	border-spacing: 2px;
+}
+td, th {
+	padding: 5px 10px;
+}
+td.type {
+	padding: 5px 10px 5px 24px;
+	background-position: 5px 5px;
+	background-repeat: no-repeat;
+}
+td.schema {
+	background-image: url('../img/folder.png');
+}
+td.table {
+	background-image: url('../img/table.png');
+}
+td.view {
+	background-image: url('../img/eye.png');
+}
+td.sequence {
+	background-image: url('../img/cog.png');
+}
+td.index {
+	background-image: url('../img/sitemap.png');
+}
+td.key {
+	background-image: url('../img/key.png');
+}
+tbody td, tbody th {
+	background-color: #ccc;
+	vertical-align: top;
+}
+thead td, thead th {
+	background-color: #000;
+	color: #fff;
+}
+tbody tr:nth-child(odd) td, tbody tr:nth-child(odd) th {
+	background-color: #ddd;
+}
+tfoot a, tfoot span.dots {
+	display: inline-block;
+	padding: 0 5px;
+	line-height: 16px;
+	width: auto;
+	height: 16px;
+}
+tfoot a.selected {
+	border: 1px solid #ccc;
+}
+tfoot a.next, tfoot a.prev {
+	background-position: center center;
+	width: 16px;
+	background-repeat: no-repeat;
+	text-indent: -999px;
+	overflow: hidden;
+}
+tfoot a.next {
+	background-image: url('../img/resultset_next.png');
+}
+tfoot a.prev {
+	background-image: url('../img/resultset_previous.png');
+}
+table span.yes, table span.no {
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	text-indent: -999px;
+	overflow: hidden;
+}
+table span.yes {
+	background-image: url('../img/tick.png');
+}
+
+/* TEXT */
+h1, h2, h3, h4, h5, h6 {
+	margin: 10px 0;
+	padding: 0 10px;
+}
+p {
+	margin: 0 0 10px;
+}
+pre {
+	padding: 20px;
+	background-color: #ccc;
+}
+table pre {
+	padding: 0;
+	background-color: transparent;
+	white-space: pre-wrap;
+}
+
+/* LAYOUT */
+header {
+	height: 40px;
+}
+ul#psm-menu {
+	list-style: none;
+}
+ul#psm-menu li {
+	display: inline-block;
+}
+ul#psm-menu li {
+	width: auto;
+	height: 16px;
+	padding: 5px 8px 5px 24px;
+	margin: 5px;
+	background-position: 5px 5px;
+	background-repeat: no-repeat;
+}
+ul#psm-menu a {
+	text-decoration: none;
+}
+li.structure {
+	background-image: url('../img/database.png');
+}
+li.functions {
+	background-image: url('../img/sum.png');
+}
+li.info {
+	background-image: url('../img/information.png');
+}
+li.sql {
+	background-image: url('../img/application_xp_terminal.png');
+}
+li.io {
+	background-image: url('../img/disk.png');
+}
+li.logout {
+	background-image: url('../img/door_in.png');
+}        
+footer {
+	padding: 20px;
+}
+
+/* FORMS */
+label {
+	display: inline-block;
+	width: 140px;
+	margin-right: 10px;
+	text-align: right;
+	vertical-align: top;
+}
+input, select {
+	display: inline-block;
+	width: 140px;
+	border: 1px solid #ccc;
+}
+form div {
+	margin-bottom: 10px;
+}
+form div.submit {
+	padding-left: 150px;
+}
+form div.agree {
+	padding-left: 150px;
+}
+form div.agree input {
+	width: auto;
+	margin-right: 10px;
+}
+form div.agree label {
+	width: auto;
+}
+p.error {
+	color: #f00;
+}
+.large textarea {
+	width: 800px;
+	height: 140px;
+}
