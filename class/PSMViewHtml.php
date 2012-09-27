@@ -345,8 +345,9 @@ class PSMViewHtml extends PSMView {
 		$data_type = isset($_POST['data']) ? $_POST['data'] : 'all';
 		$drop = isset($_POST['drop']) && intval($_POST['drop']) > 0;
 		echo '
+					<h1>'.$this->model->getDatabase().'</h1>
 					<form method="post" action="" id="psm-export">
-						<h1>Export</h1>';
+						<h2>Export</h2>';
 		echo UIForms::hidden('do_export', 1);
 		if ($this->model->hasErrors()){
 			if (isset($_POST['do_export'])){
@@ -375,7 +376,7 @@ class PSMViewHtml extends PSMView {
 		$transaction = isset($_POST['transaction']) && intval($_POST['transaction']) > 0;
 		echo '
 					<form method="post" action="" id="psm-import" enctype="multipart/form-data">
-						<h1>Import</h1>';
+						<h2>Import</h2>';
 		echo UIForms::hidden('do_import', 1);
 		if ($this->model->hasErrors()){
 			if (isset($_POST['do_import'])){
@@ -401,7 +402,7 @@ class PSMViewHtml extends PSMView {
 		}
 		echo '
 					<form method="post" action="" id="psm-query">
-						<h1>Execute SQL query</h1>';
+						<h1>'.$this->model->getDatabase().' &gt; Execute SQL query</h1>';
 		echo UIForms::hidden('do_sql', 1);
 		if ($this->model->hasErrors()){
 			echo UIForms::error($this->model->getErrors());
@@ -471,7 +472,7 @@ class PSMViewHtml extends PSMView {
 	}
 	private function serverInfo(){
 		echo '
-					<h1>Info</h1>
+					<h1>'.$this->model->getDatabase().' &gt; Info</h1>
 					<table>
 						<thead>
 							<tr>
@@ -518,7 +519,7 @@ class PSMViewHtml extends PSMView {
 	}
 	private function functionList($schema){
 		echo '
-					<h1><a href="../../">Functions</a> &gt; '.$schema.'</h1>
+					<h1>'.$this->model->getDatabase().' &gt; <a href="../../">Functions</a> &gt; '.$schema.'</h1>
 					<table>
 						<thead>
 							<tr>
@@ -552,7 +553,7 @@ class PSMViewHtml extends PSMView {
 	}
 	private function sequenceInfo($schema, $sequence){
 		echo '
-					<h1><a href="../../">Structure</a> &gt; <a href="../../schema/'.$schema.'/">'.$schema.'</a> &gt; '.$sequence.'</h1>
+					<h1>'.$this->model->getDatabase().' &gt; <a href="../../">Structure</a> &gt; <a href="../../schema/'.$schema.'/">'.$schema.'</a> &gt; '.$sequence.'</h1>
 					<table>
 						<thead>
 							<tr>
@@ -599,7 +600,7 @@ class PSMViewHtml extends PSMView {
 	}
 	private function viewInfo($schema, $view){
 		echo '
-					<h1><a href="../../">Structure</a> &gt; <a href="../../schema/'.$schema.'/">'.$schema.'</a> &gt; '.$view.'</h1>
+					<h1>'.$this->model->getDatabase().' &gt; <a href="../../">Structure</a> &gt; <a href="../../schema/'.$schema.'/">'.$schema.'</a> &gt; '.$view.'</h1>
 					<table>
 						<thead>
 							<tr>
@@ -636,7 +637,7 @@ class PSMViewHtml extends PSMView {
 	}
 	private function tableInfo($schema, $table){
 		echo '
-					<h1><a href="../../">Structure</a> &gt; <a href="../../schema/'.$schema.'/">'.$schema.'</a> &gt; '.$table.'</h1>
+					<h1>'.$this->model->getDatabase().' &gt; <a href="../../">Structure</a> &gt; <a href="../../schema/'.$schema.'/">'.$schema.'</a> &gt; '.$table.'</h1>
 					<table>
 						<thead>
 							<tr>
@@ -764,7 +765,7 @@ class PSMViewHtml extends PSMView {
 	}
 	private function tableData($schema, $table){
 		echo '
-					<h1><a href="../../../">Structure</a> &gt; <a href="../../../schema/'.$schema.'/">'.$schema.'</a> &gt; <a href="../">'.$table.'</a> &gt; Data</h1>';
+					<h1>'.$this->model->getDatabase().' &gt; <a href="../../../">Structure</a> &gt; <a href="../../../schema/'.$schema.'/">'.$schema.'</a> &gt; <a href="../">'.$table.'</a> &gt; Data</h1>';
 		$data_count = $this->model->getDataCount($schema, $table);
 		if (($r = $this->model->getData($schema, $table, (isset($_GET['page']) ? $_GET['page'] * $this->rows_per_page : 0), $this->rows_per_page)) !== false){
 			echo '
@@ -812,7 +813,7 @@ class PSMViewHtml extends PSMView {
 	}
 	private function objectList($schema, $type = null){
 		echo '
-					<h1><a href="../../">Structure</a> &gt; '.$schema.'</h1>
+					<h1>'.$this->model->getDatabase().' &gt; <a href="../../">Structure</a> &gt; '.$schema.'</h1>
 					<table>
 						<thead>
 							<tr>
@@ -864,7 +865,7 @@ class PSMViewHtml extends PSMView {
 	}
 	private function schemaList($title){
 		echo '
-					<h1>'.$title.'</h1>
+					<h1>'.$this->model->getDatabase().' &gt; '.$title.'</h1>
 					<table>
 						<thead>
 							<tr>
